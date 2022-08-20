@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+//getting duplicate values as a key from map and making key as values
 public class HashMap1 {
 	public static void main(String[] args) {
 		Map<String, List<String>> map = new HashMap<>();
@@ -18,7 +19,8 @@ public class HashMap1 {
 		
 		Map<String,List<String>> newMap = new HashMap();
 		
-		  Set<String> values = new HashSet<>(); map.entrySet().forEach(x ->
+		  Set<String> values = new HashSet<>(); 
+		  map.entrySet().forEach(x ->
 		  values.addAll(x.getValue()));
 		  
 		  //simple way

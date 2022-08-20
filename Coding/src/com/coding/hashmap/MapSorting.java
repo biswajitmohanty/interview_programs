@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
+//Sorting a map based on multiple values
 public class MapSorting {
 	public static void main(String[] args) {
 		Map<String, Employee> map = new HashMap<>();
