@@ -25,11 +25,9 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return this.id+": "+ this.name;
 	}
 
 }

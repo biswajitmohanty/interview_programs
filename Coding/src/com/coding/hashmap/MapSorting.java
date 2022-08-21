@@ -1,10 +1,14 @@
 package com.coding.hashmap;
 
+
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
-//Sorting a map based on multiple values
+//Sorting a map based on multiple values and collecting as a map
 public class MapSorting {
 	public static void main(String[] args) {
 		Map<String, Employee> map = new HashMap<>();
@@ -25,6 +29,19 @@ public class MapSorting {
 						thenComparing(Employee::getName)
 				)
 		).forEach(System.out::println);
+		
+		Map<String, Employee> m = map.entrySet().stream().sorted(
+				Map.Entry.comparingByValue(
+						Comparator.comparingLong(Employee::getId).
+						thenComparing(Employee::getName)
+				)
+		).collect(Collectors.toMap(
+				Entry::getKey,
+				Entry::getValue,
+				(e1, e2) -> e2,
+				LinkedHashMap::new
+		));
+		System.out.println(m);
 		
 	}
 }
